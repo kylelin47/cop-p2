@@ -39,5 +39,10 @@ int main()
     std::cout << std::endl;
     std::cout << x << std::endl;
     h3.cluster_distribution(std::cout);
+    h3.remove_random();
+    h3.remove_random();
+    h3.remove_random();
+    std::cout << std::endl;
+    h3.print(std::cout);
     return 0;
 }
