@@ -27,7 +27,7 @@ int main()
     h2.print(std::cout);
     std::cout << std::endl;
     std::cout << h2.search(10, i2) << std::endl;
-    cop3530::hashProbe<std::string, char> h3(20, 'q');
+    cop3530::hashProbe<std::string, char> h3(20, 'r');
     h3.insert("sweg", 'A');
     h3.insert("sweg1", 'B');
     h3.insert("sweg2", 'B');

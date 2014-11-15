@@ -9,12 +9,16 @@ namespace cop3530
     class hashProbe
     {
     public:
-        hashProbe( std::size_t capacity, char type )
+        hashProbe( std::size_t capacity, char type = 'l' )
         {
             count = 0;
             this->max_count = capacity;
             table = new item*[capacity](); //initialize table to null
             this->type = type; //what type of probe
+            if (type != 'q' && type != 'r' && type != 'l')
+            {
+                type = 'l';
+            }
         }
         ~hashProbe()
         {
@@ -211,8 +215,8 @@ namespace cop3530
         }
         std::ostream& cluster_distribution ( std::ostream& out ) const
         {
-            int* tmp = new int[size()];
-            for (unsigned int i = 0; i < size(); ++i)
+            int* tmp = new int[size() + 1];
+            for (unsigned int i = 0; i < size() + 1; ++i)
             {
                 tmp[i] = 0;
             }
@@ -228,7 +232,7 @@ namespace cop3530
                 ++tmp[cluster_size];
             }
             bool first = true;
-            for (unsigned int i = 1; i < size(); ++i)
+            for (unsigned int i = 1; i < size() + 1; ++i)
             {
                 if (tmp[i] > 0)
                 {
