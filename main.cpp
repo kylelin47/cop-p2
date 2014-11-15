@@ -33,8 +33,8 @@ int main()
     h3.insert("sweg2", 'B');
     h3.insert("sweg3", 'C');
     char i3;
-    int x = h3.search("sweg3", i3);
     h3.remove_random();
+    int x = h3.search("sweg3", i3);
     h3.print(std::cout);
     std::cout << std::endl;
     std::cout << x << std::endl;

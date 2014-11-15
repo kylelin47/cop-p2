@@ -36,13 +36,14 @@ namespace cop3530
             {
                 item* kv = new item(key, value);
                 unsigned int i = hash(key);
-                unsigned int j = hash2(key);
+                unsigned int j = i;
+                unsigned int h = hash2(key);
                 while( table[i] != NULL && !(compareKeys(table[i]->getKey(), key)) )
                 {
                     ++probe_count;
                     if ( type == 'l' ) ++i;
-                    else if ( type == 'q' ) i = i + probe_count * probe_count;
-                    else if ( type == 'r' ) i = i + probe_count * j;
+                    else if ( type == 'q' ) i = j + probe_count * probe_count;
+                    else if ( type == 'r' ) i += h;
                     while (i >= capacity())
                     {
                         i = i - capacity();
@@ -64,13 +65,14 @@ namespace cop3530
         {
             int probe_count = 0;
             unsigned int i = hash(key);
+            unsigned int j = i;
             unsigned int h = hash2(key);
             while( table[i] != NULL && !(compareKeys(table[i]->getKey(), key)) )
             {
                 ++probe_count;
                 if ( type == 'l' ) ++i;
-                else if ( type == 'q' ) i = i + probe_count * probe_count;
-                else if ( type == 'r' ) i = i + h * probe_count;
+                else if ( type == 'q' ) i = j + probe_count * probe_count;
+                else if ( type == 'r' ) i += h;
                 while (i >= capacity())
                 {
                     i = i - capacity(); //wrap-around
@@ -95,9 +97,9 @@ namespace cop3530
                 {
                     ++probe_count_tmp;
                     unsigned int k;
-                    if ( type == 'l' ) k = i + 1;
-                    else if ( type == 'q' ) k = i + probe_count_tmp * probe_count_tmp;
-                    else if ( type == 'r' ) k = i + h * probe_count_tmp;
+                    if ( type == 'l' ) k = j + probe_count_tmp;
+                    else if ( type == 'q' ) k = j + probe_count_tmp * probe_count_tmp;
+                    else if ( type == 'r' ) k = j + h * probe_count_tmp;
                     while (k >= capacity())
                     {
                         k = k - capacity();
@@ -112,13 +114,14 @@ namespace cop3530
         {
             int probe_count = 0;
             unsigned int i = hash(key);
+            unsigned int j = i;
             unsigned int h = hash2(key);
             while( table[i] != NULL && !(compareKeys(table[i]->getKey(), key)) )
             {
                 ++probe_count;
                 if ( type == 'l' ) ++i;
-                else if ( type == 'q' ) i = i + probe_count * probe_count;
-                else if ( type == 'r' ) i = i + h;
+                else if ( type == 'q' ) i = j + probe_count * probe_count;
+                else if ( type == 'r' ) i += h;
                 while (i >= capacity())
                 {
                     i = i - capacity(); //wrap-around
