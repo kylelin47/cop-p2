@@ -1,6 +1,9 @@
 #ifndef HASHBUCKET_H
 #define HASHBUCKET_H
 #include "item.h"
+#include <math.h>
+#include <cstddef>
+#include <iostream>
 
 namespace cop3530
 {
@@ -21,16 +24,15 @@ namespace cop3530
                 next = NULL;
             };
         };
-        std::size_t count;
-        std::size_t max_count;
+        size_t count;
+        size_t max_count;
         Node** table;
         unsigned int hash( int k )
         {
-            //multiplication method. all multiples of 10 get mapped to 0
             return floor(capacity()*(k*0.6 - floor(k*0.6)));
         }
     public:
-        hashBucket( std::size_t capacity )
+        hashBucket( size_t capacity )
         {
             count = 0;
             this->max_count = capacity;
@@ -177,11 +179,11 @@ namespace cop3530
         {
             return (count == 0);
         }
-        std::size_t capacity() const
+        size_t capacity() const
         {
             return max_count;
         }
-        std::size_t size() const
+        size_t size() const
         {
             return count;
         }

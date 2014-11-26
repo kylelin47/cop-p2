@@ -30,29 +30,24 @@ namespace cop3530
         }
         bool insert( int key, char value )
         {
-            if (size() < capacity())
+            unsigned int i = hash(key);
+            unsigned int j = i;
+            while( table[i] != NULL && table[i]->getKey() != key )
             {
-                item* kv = new item(key, value);
-                unsigned int i = hash(key);
-                while( table[i] != NULL && table[i]->getKey() != key )
+                ++i;
+                if (i == capacity())
                 {
-                    ++i;
-                    if (i == capacity())
-                    {
-                        i = 0;
-                    }
+                    i = 0;
                 }
-                if (table[i] == NULL)
-                {
-                    ++count;
-                }
-                table[i] = kv;
-                return true;
+                if (i == j) return false;
             }
-            else
+            if (table[i] == NULL)
             {
-                return false;
+                ++count;
             }
+            item* kv = new item(key, value);
+            table[i] = kv;
+            return true;
         }
         bool remove( int key, char &value )
         {
@@ -77,18 +72,27 @@ namespace cop3530
             else
             {
                 value = table[i]->getValue();
-                delete table[i];
                 --count;
+                bool first = true;
                 //shift all entries in the cluster left one
+                //must do this by removal/reinsertion because otherwise you can move
+                //items of different hashes that happen to collide with the probe
                 while ( table[i] != NULL )
                 {
-                    unsigned int k = i + 1;
-                    if (k == capacity())
+                    int key = table[i]->getKey();
+                    char v = table[i]->getValue();
+                    delete table[i];
+                    table[i] = NULL;
+                    if (!first)//first needs to actually be deleted, not reinserted in proper place
                     {
-                        k = 0;
+                        insert(key, v);
                     }
-                    table[i] = table[k];
-                    i = k;
+                    first = false;
+                    ++i;
+                    while (i >= capacity())
+                    {
+                        i = i - capacity();
+                    }
                 }
                 return true;
             }
