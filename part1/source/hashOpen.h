@@ -9,7 +9,7 @@ namespace cop3530
     class hashOpen
     {
     public:
-        hashOpen( std::std::size_t capacity )
+        hashOpen( std::size_t capacity )
         {
             count = 0;
             this->max_count = capacity;
@@ -139,11 +139,11 @@ namespace cop3530
         {
             return (count == 0);
         }
-        std::std::size_t capacity() const
+        std::size_t capacity() const
         {
             return max_count;
         }
-        std::std::size_t size() const
+        std::size_t size() const
         {
             return count;
         }
@@ -170,8 +170,8 @@ namespace cop3530
             return out;
         }
     private:
-        std::std::size_t count;
-        std::std::size_t max_count;
+        std::size_t count;
+        std::size_t max_count;
         item** table;
         unsigned int hash( int k )
         {
