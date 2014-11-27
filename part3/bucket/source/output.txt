@@ -1,0 +1,84 @@
+Bucket Based: Ints and Chars
+Capacity: 20
+Character at Key 10: B
+Attempting to Remove Key 30: 3
+Attempting to Remove Key 31: -1
+Character at Key 20: C
+[ 10 0 20 40 50 60 70 80 90 100 110 120 130 140 150 160 170 180 190 |- - - - - -
+ - - - - - - - - 23 |- - - - ]
+Size: 20
+Load: 0.1
+Is Empty: 0
+[ - - - - - - - - - - - - - - - - - - - - ]
+Is Empty: 1
+3
+3
+2
+A
+[ 0 5 10 15 20 25 30 35 40 45 50 55 60 65 70 |- - 2 12 17 22 27 32 37 42 47 52 5
+7 62 67 72 |7 |- - 4 9 24 29 34 39 44 49 54 59 64 69 74 |14 19 |- - 6 11 16 21 2
+6 31 36 41 46 51 |1 56 61 66 71 |- - 3 8 13 18 23 48 53 58 63 68 73 |28 33 38 43
+ |- - - ]
+((1,1), (2,1), (4,1), (5,1), (10,1), (11,1), (13,1), (14,1), (15,1))
+Key Randomly Removed: 36
+Key Randomly Removed: 15
+Key Randomly Removed: 69
+Key Randomly Removed: 12
+Key Randomly Removed: 10
+Key Randomly Removed: 5
+Key Randomly Removed: 2
+Key Randomly Removed: 64
+Key Randomly Removed: 30
+Key Randomly Removed: 3
+Key Randomly Removed: 1
+Key Randomly Removed: 53
+Key Randomly Removed: 37
+Key Randomly Removed: 48
+Key Randomly Removed: 51
+Key Randomly Removed: 23
+Key Randomly Removed: 42
+Key Randomly Removed: 33
+Key Randomly Removed: 28
+Key Randomly Removed: 47
+[ 0 20 25 35 40 45 50 55 60 65 70 |- - 17 22 27 32 52 57 62 67 72 |7 |- - 4 9 24
+ 29 34 39 44 49 54 59 74 |14 19 |- - 6 11 16 21 26 31 41 46 |56 61 66 71 |- - 8
+13 18 58 63 68 73 |38 43 |- - - ]
+55
+((1,1), (2,2), (4,1), (7,1), (8,1), (9,1), (11,2))
+[ 0 20 25 35 40 45 50 55 60 65 70 |- - 17 22 27 32 52 57 62 67 72 |7 |- - 4 9 24
+ 29 34 39 44 49 54 59 74 |14 19 |- - 6 11 16 21 26 31 41 46 |56 61 66 71 |- - 8
+13 18 58 63 68 73 |38 43 |- - - ]
+E
+Bucket Based: Strings and Ints
+[ - - - Hello! |]
+Number of Probes to Search: 0
+2
+Number of Probes to Remove: 0
+[ - - - - ]
+Is Empty: 1
+Number of Probes to Search: 1
+3
+Number of Probes to Remove: 1
+Key Randomly Removed: Goodbye!
+Key Randomly Removed: Hello!
+Bucket Based: C-Strings and Chars
+[ - - - Hello! |]
+Number of Probes to Search: 0
+D
+Number of Probes to Remove: 0
+[ - - - - ]
+Is Empty: 1
+Number of Probes to Search: 1
+C
+Number of Probes to Remove: 1
+Key Randomly Removed: Goodbye!
+Key Randomly Removed: Hello!
+Bucket Based: Doubles and Ints
+[ 0 3.4 5 8.4 |1.8 6.8 |0.2 5.2 |2 3.6 8.6 |0.4 5.4 7 |3.8 8.8 |2.2 7.2 |0.6 5.6
+ 9 |2.4 4 7.4 |0.8 5.8 |4.2 9.2 |2.6 7.6 |1 4.4 6 9.4 |2.8 7.8 |1.2 6.2 |4.6 9.6
+ |1.4 3 6.4 8 |4.8 9.8 |3.2 8.2 |1.6 6.6 10 |]
+Number of Probes to Insert: 4
+Number of Probes to Search: 4
+25
+[ 5 |- - - 5.4 7 |3.8 |2.2 |- 4 |0.8 |- - 4.4 6 |- - 4.6 |- - - 6.6 10 |]
+((1,6), (2,3))

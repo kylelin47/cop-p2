@@ -36,7 +36,7 @@ Should it be determined that any are not 100% true, I agree to take a 0
 
 I affirm that I am the sole author of this Hashmap with Buckets
 and the associated tests.  
-Kyle Lin, 12/02/14 in COP3520 section 1085
+Kyle Lin, 12/02/14 in COP3530 section 1085
 
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------

@@ -1,17 +1,26 @@
-Hashmap with Open Addressing written by Lin, Kyle
+Bucket-based Hashmap with Templates written by Lin, Kyle
 COP 3530, 2014F 1085
 ======================================================================
-Part I: hashmaps with Open Addressing
+Part III: Hashmaps with Buckets
 ======================================================================
-My MAP implementation uses the data structure described in the part I
+My MAP implementation uses the data structure described in the part II
 instructions and conforms to the technique required for this map
-variety: <yes/no>
+variety: yes
+
+My MAP implementation 100% correctly supports all three probing 
+techniques: yes
+
+My MAP implementation 100% correctly supports the following key types:
+* signed int: yes
+* double: yes
+* c-string: yes
+* std::string: yes
+
+My MAP implementation 100% correctly supports the ANY value type: yes
 
 My MAP implementation 100% correctly supports the following methods
 as described in part I:
 
-* insert: yes
-* remove: yes
 * search: yes
 * clear: yes
 * is_empty: yes
@@ -20,6 +29,14 @@ as described in part I:
 * load: yes
 * print: yes
 
+My MAP implementation 100% correctly supports the following revised 
+and new methods as described in part III:
+
+* insert: yes
+* remove: yes
+* search: yes
+* cluster_distribution(): yes
+* remove_random(): yes
 ======================================================================
 FOR ALL PARTS
 ======================================================================
@@ -35,9 +52,9 @@ I affirm that all the responsess I have provided above are 100% true.
 Should it be determined that any are not 100% true, I agree to take a 0
 (zero) on the assignment: yes
 
-I affirm that I am the sole author of this Hashmap with Open Addressing
+I affirm that I am the sole author of this <MAP variety: e.g., RBST>
 and the associated tests.  
-Kyle Lin, 12/2/2014 in COP3530 section 1085
+Kyle Lin, 12/02/14 in COP3530 section 1085
 
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
