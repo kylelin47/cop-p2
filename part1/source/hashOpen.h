@@ -45,6 +45,10 @@ namespace cop3530
             {
                 ++count;
             }
+            else
+            {
+                delete table[i];
+            }
             item* kv = new item(key, value);
             table[i] = kv;
             return true;
@@ -72,7 +76,6 @@ namespace cop3530
             else
             {
                 value = table[i]->getValue();
-                --count;
                 bool first = true;
                 //shift all entries in the cluster left one
                 //must do this by removal/reinsertion because otherwise you can move
@@ -83,6 +86,7 @@ namespace cop3530
                     char v = table[i]->getValue();
                     delete table[i];
                     table[i] = NULL;
+                    --count;
                     if (!first)//first needs to actually be deleted, not reinserted in proper place
                     {
                         insert(key, v);

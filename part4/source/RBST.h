@@ -5,6 +5,7 @@
 #include <time.h>
 #include <queue>
 #include <stack>
+#include <iostream>
 namespace cop3530
 {
     template <typename K, typename V>
@@ -138,9 +139,9 @@ namespace cop3530
         }
         void print(std::ostream& out)
         {
+            out << "[ ";
             if ( root != NULL )
             {
-                out << '[';
                 std::queue<Node*> q;
                 q.push(root);
                 while ( !q.empty() )
@@ -151,16 +152,17 @@ namespace cop3530
                     if (n->left != NULL) q.push(n->left);
                     if (n->right != NULL) q.push(n->right);
                 }
-                out << ']';
             }
+            out << ']';
         }
         std::ostream& cluster_distribution ( std::ostream& out ) const
         {
+            return out;
         }
         K remove_random()
         {
             srand(time(NULL));
-            int i = -1;
+            int i = 0;
             unsigned int R = (rand() % size()) + 1;
             if ( root != NULL )
             {
@@ -260,7 +262,7 @@ namespace cop3530
             b->left = a;
             return b;
         }
-        void removeR(Node*& h, K v, int& nodes_visited)
+        void removeR(Node*& h, K v, V& value, int& nodes_visited)
         {
             if (h == NULL)
             {
@@ -271,18 +273,21 @@ namespace cop3530
             if (compareKeys(v, w) == -1)
             {
                 ++nodes_visited;
-                removeR(h->left, v);
+                removeR(h->left, v, value, nodes_visited);
             }
             if (compareKeys(w, v) == -1)
             {
                 ++nodes_visited;
-                removeR(h->right, v);
+                removeR(h->right, v, value, nodes_visited);
             }
             if (compareKeys(w, v) == 0)
             {
                 Node* t = h;
+                value = h->data.getValue();
                 h = joinLR(h->left, h->right);
-                delete t;
+                t->left = free;
+                t->right = NULL;
+                free = t;
                 --count;
             }
         }

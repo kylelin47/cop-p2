@@ -1,5 +1,6 @@
 #ifndef HASHPROBE_H
 #define HASHPROBE_H
+#include <iostream>
 #include <string.h>
 #include <stdlib.h>
 #include <time.h>
@@ -16,7 +17,7 @@ namespace cop3530
             this->max_count = max_count;
             table = new item*[max_count](); //initialize table to null
             this->type = type; //what type of probe
-            if (type != 'q' && type != 'r' && type != 'l')
+            if (type != 'r' && type != 'l')
             {
                 type = 'l';
             }
@@ -39,13 +40,11 @@ namespace cop3530
             int probe_count = 0;
             unsigned int i = hash(key);
             unsigned int j = i;
-            unsigned int h;
-            if (type == 'r') h = hash2(key);
             while( table[i] != NULL && !(compareKeys(table[i]->getKey(), key)) )
             {
                 ++probe_count;
-                i = probe(i, j, h, probe_count);
-                if (capacity() == size() && probe_count > 10000)
+                i = probe(i, j, probe_count);
+                if (probe_count > 10000)
                 {
                     return -1 * probe_count; //prevent infinite loop while looking for something to replace
                 }
@@ -53,6 +52,10 @@ namespace cop3530
             if (table[i] == NULL)
             {
                 ++count;
+            }
+            else
+            {
+                delete table[i];
             }
             item* kv = new item(key, value);
             table[i] = kv;
@@ -63,13 +66,11 @@ namespace cop3530
             int probe_count = 0;
             unsigned int i = hash(key);
             unsigned int j = i;
-            unsigned int h;
-            if (type == 'r') h = hash2(key);
             while( table[i] != NULL && !(compareKeys(table[i]->getKey(), key)) )
             {
                 ++probe_count;
-                i = probe(i, j, h, probe_count);
-                if (capacity() == size() && probe_count > 10000)
+                i = probe(i, j, probe_count);
+                if (probe_count > 10000)
                 {
                     return -1 * probe_count; //prevent infinite loop
                 }
@@ -81,7 +82,6 @@ namespace cop3530
             else
             {
                 value = table[i]->getValue();
-                --count;
                 bool first = true;
                 //shift all entries in the cluster left by the proper probe amount
                 int probe_count_tmp = probe_count; //need to preserve value for return
@@ -91,13 +91,14 @@ namespace cop3530
                     V v = table[i]->getValue();
                     delete table[i];
                     table[i] = NULL;
+                    --count;
                     if (!first)//first needs to actually be deleted, not reinserted in proper place
                     {
                         insert(key, v);
                     }
                     first = false;
                     ++probe_count_tmp;
-                    i = probe(i, j, h, probe_count_tmp);
+                    i = probe(i, j, probe_count_tmp);
                 }
                 return probe_count;
             }
@@ -107,13 +108,11 @@ namespace cop3530
             int probe_count = 0;
             unsigned int i = hash(key);
             unsigned int j = i;
-            unsigned int h;
-            if (type == 'r') h = hash2(key);
             while( table[i] != NULL && !(compareKeys(table[i]->getKey(), key)) )
             {
                 ++probe_count;
-                i = probe(i, j, h, probe_count);
-                if (capacity() == size() && probe_count > 10000)
+                i = probe(i, j, probe_count);
+                if (probe_count > 10000)
                 {
                     return -1 * probe_count; //prevent infinite loop
                 }
@@ -205,6 +204,11 @@ namespace cop3530
         }
         std::ostream& cluster_distribution ( std::ostream& out ) const
         {
+            if (size() == capacity())
+            {
+                out << "((" << size() << ", 1))";
+                return out;
+            }
             int* tmp = new int[size() + 1];
             for (unsigned int i = 0; i < size() + 1; ++i)
             {
@@ -292,10 +296,6 @@ namespace cop3530
         {
             return floor(capacity()*(k*0.6 - floor(k*0.6)));
         }
-        unsigned int hash2( int k )
-        {
-            return k % (capacity() - 1) + 1;
-        }
         unsigned int hash( std::string k )
         {
             const char* v = k.c_str();
@@ -304,21 +304,9 @@ namespace cop3530
                 h = (a*h + *v) % capacity();
             return h;
         }
-        unsigned int hash2( std::string k )
-        {
-            const char* v = k.c_str();
-            int h = 0, a = 31415;
-            for (; *v != 0; v++)
-                h = (a*h + *v) % capacity();
-            return h % (capacity() - 1) + 1;
-        }
         unsigned int hash( double k )
         {
             return floor(capacity()*(k*0.6 - floor(k*0.6)));
-        }
-        unsigned int hash2( double k )
-        {
-            return (int)k % (capacity() - 1) + 1;
         }
         unsigned int hash( char* k )
         {
@@ -327,18 +315,10 @@ namespace cop3530
                 h = (a*h + *k) % capacity();
             return h;
         }
-        unsigned int hash2( char* k )
-        {
-            int h = 0, a = 31415;
-            for (; *k != 0; k++)
-                h = (a*h + *k) % capacity();
-            return h % (capacity() -1) + 1;
-        }
-        unsigned int probe( unsigned int i, unsigned int j, unsigned int h, int probe_count )
+        unsigned int probe( unsigned int i, unsigned int j, int probe_count )
         {
             if ( type == 'l' ) ++i;
-            else if ( type == 'q' ) i = j + probe_count * probe_count;
-            else if ( type == 'r' ) i += h;
+            else {i = j + probe_count * probe_count;}
             i = i % capacity();
             return i;
         }
