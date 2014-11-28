@@ -1,7 +1,9 @@
 #include <cstdlib>
 #include <string>
 #include <iostream>
-
+#include <sys/resource.h>
+#define RUSAGE_SELF	0
+#define RUSAGE_CHILDREN	(-1)
 std::size_t hash( std::string const& s ) {
   std::size_t value = 0xC965AF37U;
   
