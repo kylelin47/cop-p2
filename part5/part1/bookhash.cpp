@@ -27,7 +27,7 @@ int main( int argc, char** argv ) {
     getrusage(RUSAGE_SELF, &usage);
     utime = usage.ru_utime;
     stime = usage.ru_stime;
-    std::cout << "User time: " << utime.tv_sec + 1.0*utime.tv_usec/1000000 << " seconds" << std::end;
-    std::cout << "System time: " << stime.tv_sec + 1.0*stime.tv_usec/1000000 << " seconds" << std::end;
+    std::cout << "User time: " << utime.tv_sec + 1.0*utime.tv_usec/1000000 << " seconds" << std::endl;
+    std::cout << "System time: " << stime.tv_sec + 1.0*stime.tv_usec/1000000 << " seconds" << std::endl;
     return 0;
 }
