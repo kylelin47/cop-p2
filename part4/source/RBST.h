@@ -30,37 +30,43 @@ namespace cop3530
         }
         ~RBST()
         {
+            for (unsigned int i=0; i < capacity(); ++i)
+            {
+                delete node_table[i];
+                node_table[i] = NULL;
+            }
             delete[] node_table;
             node_table = NULL;
         }
         int insert(K key, V value)
         {
-            int nodes_visited = 0;
-            if (size() < capacity() || search(key, value) > 0)
+            if (root != NULL)//first search for something to replace to avoid changing structure of the tree
             {
-                if (root != NULL)
+                int probe_count = 0;
+                Node* current = root;
+                while ( current != NULL && compareKeys(key, current->data.getKey()) != 0 )
                 {
-                    int probe_count = 0;
-                    Node* current = root;
-                    while ( current != NULL && compareKeys(key, current->data.getKey()) != 0 )
+                    if (compareKeys(key, current->data.getKey()) == -1)
                     {
-                        if (compareKeys(key, current->data.getKey()) == -1)
-                        {
-                            ++probe_count;
-                            current = current->left;
-                        }
-                        else
-                        {
-                            ++probe_count;
-                            current = current->right;
-                        }
+                        ++probe_count;
+                        current = current->left;
                     }
-                    if ( current != NULL )
+                    else
                     {
-                        current->data = item(key, value);
-                        return probe_count;
+                        ++probe_count;
+                        current = current->right;
                     }
                 }
+                if ( current != NULL )
+                {
+                    current->data = item(key, value);
+                    return probe_count;
+                }
+            }
+            int nodes_visited = 0;
+            //else insert and rotate
+            if (size() < capacity())
+            {
                 insertR(root, item(key, value), nodes_visited);
             }
             return nodes_visited;
@@ -302,6 +308,7 @@ namespace cop3530
                 h->data = x;
                 return;
             }
+            //srand(time(NULL));
             if (rand() < RAND_MAX/(h->subtree_size+1))
             {
                 insertT(h, x, nodes_visited);

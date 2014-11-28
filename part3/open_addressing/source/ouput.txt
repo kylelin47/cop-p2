@@ -15,20 +15,20 @@ Is Empty: 1
 -7
 [ 5 10 15 2 7 12 17 4 9 14 19 6 1 11 16 3 8 13 18 - ]
 ((19,1))
+Key Randomly Removed: 19
+Key Randomly Removed: 6
+Key Randomly Removed: 11
+Key Randomly Removed: 16
+Key Randomly Removed: 1
+Key Randomly Removed: 3
+Key Randomly Removed: 8
 Key Randomly Removed: 13
 Key Randomly Removed: 18
 Key Randomly Removed: 5
-Key Randomly Removed: 15
-Key Randomly Removed: 7
-Key Randomly Removed: 17
-Key Randomly Removed: 9
-Key Randomly Removed: 19
-Key Randomly Removed: 1
-Key Randomly Removed: 16
-[ 10 - - 2 12 - - 4 14 - - 6 11 - - 3 8 - - - ]
+[ 10 15 - 2 7 12 17 4 9 14 - - - - - - - - - - ]
 9
-((1,1), (2,4))
-[ - - - 2 7 - - 4 14 - - 6 11 - - 3 8 - - - ]
+((2,1), (7,1))
+[ 15 - - 2 17 7 - 4 9 14 - - - - - - - - - - ]
 E
 Hash Probes: Ints and Chars Quadratic
 Capacity: 23
@@ -47,21 +47,21 @@ Is Empty: 1
 -6
 [ 5 10 14 - 2 7 16 22 12 4 9 18 19 1 6 21 15 11 3 8 17 23 13 ]
 ((22,1))
-Key Randomly Removed: 15
-Key Randomly Removed: 11
-Key Randomly Removed: 3
-Key Randomly Removed: 8
-Key Randomly Removed: 18
 Key Randomly Removed: 23
-Key Randomly Removed: 17
+Key Randomly Removed: 13
 Key Randomly Removed: 5
-Key Randomly Removed: 14
-Key Randomly Removed: 7
+Key Randomly Removed: 15
+Key Randomly Removed: 2
+Key Randomly Removed: 12
+Key Randomly Removed: 16
 Key Randomly Removed: 22
-[ 10 - - - 2 12 - - - 4 9 - 19 1 6 - - 16 13 - - - 21 ]
+Key Randomly Removed: 9
+Key Randomly Removed: 1
+Key Randomly Removed: 21
+[ 10 - - - 7 17 - - - 4 14 - 19 6 11 - - - 3 8 - - 18 ]
 11
 ((2,4), (3,1))
-[ - - - - 2 7 - - - 4 9 - 19 1 6 - - 16 13 - - - 21 ]
+[ - - - - 17 7 - - - 4 14 - 19 6 11 - - - 3 8 - - 18 ]
 E
 Hash Probes: Ints and Chars Double Hashing
 Capacity: 128
@@ -91,28 +91,28 @@ Is Empty: 1
 4 44 - 21 - - - - 26 51 - 3 - 31 67 - - 55 36 - - 13 - 41 - 8 - 60 39 - - 23 50
 ]
 ((1,14), (2,15), (3,1), (4,1), (5,3), (6,1))
-Key Randomly Removed: 40
-Key Randomly Removed: 62
-Key Randomly Removed: 34
-Key Randomly Removed: 46
-Key Randomly Removed: 16
-Key Randomly Removed: 74
-Key Randomly Removed: 21
-Key Randomly Removed: 51
-Key Randomly Removed: 31
-Key Randomly Removed: 55
+Key Randomly Removed: 45
+Key Randomly Removed: 22
+Key Randomly Removed: 38
+Key Randomly Removed: 27
+Key Randomly Removed: 64
+Key Randomly Removed: 4
+Key Randomly Removed: 32
+Key Randomly Removed: 57
+Key Randomly Removed: 37
+Key Randomly Removed: 14
 [ - - 0 9 - 56 5 - 33 47 61 10 18 29 - 54 15 - 43 - 71 - - - - 2 25 66 53 - - 30
- 28 7 - 59 35 - 12 - - - 20 - - 49 45 - 22 - - - 38 27 - 64 4 - 32 57 - - - 37 -
- - 14 - 42 - 65 - 48 24 68 69 1 - 52 72 - - - 6 - 70 - - 11 - - - 58 - 73 - 44 -
- - - - - - 26 - - 3 - - 67 - - - 36 - - 13 - 41 - 8 - 60 39 - - 23 50 ]
+ 28 7 - 59 35 - 12 - - - 20 - - 49 - - - - - - - - - - - - - - - - - - - - - - 4
+2 - 65 - 48 24 68 69 1 - 52 72 - - 40 6 62 70 34 - 11 46 - - 58 16 73 74 44 - 21
+ - - - - 26 51 - 3 - 31 67 - - 55 36 - - 13 - 41 - 8 - 60 39 - - 23 50 ]
 62
-((1,22), (2,11), (3,1), (4,1), (5,1), (6,1))
+((1,12), (2,11), (3,1), (4,1), (5,3), (6,1))
 [ - - 0 9 - 56 5 - 33 47 61 - 18 29 - 54 15 - 43 - 71 - - - - 2 25 66 53 - - 30
-28 7 - 59 35 - - - - - 20 - - 49 45 - 22 - - - 38 27 - 64 4 - 32 57 - - - 37 - -
- 14 - 42 - 65 - 48 24 68 69 1 - 52 72 - - - 6 - 70 - - 11 - - - 58 - 73 - 44 - -
- - - - - 26 - - 3 - - 67 - - - 36 - - 13 - 41 - 8 - 60 39 - - 23 50 ]
+28 7 - 59 35 - - - - - 20 - - 49 - - - - - - - - - - - - - - - - - - - - - - 42
+- 65 - 48 24 68 69 1 - 52 72 - - 40 6 62 70 34 - 11 46 - - 58 16 73 74 44 - 21 -
+ - - - 26 51 - 3 - 31 67 - - 55 36 - - 13 - 41 - 8 - 60 39 - - 23 50 ]
 E
-Hash Probes: Strings and Ints
+Hash Probes: Strings and Ints Double Hashing
 [ - - - Hello! ]
 Number of Probes to Search: 0
 2
@@ -123,6 +123,7 @@ Number of Probes to Search: 1
 3
 Number of Probes to Remove: 1
 Key Randomly Removed: Hello!
+Key Randomly Removed: Goodbye!
 Hash Probes: C-Strings and Chars
 [ - - - Hello! ]
 Number of Probes to Search: 0
@@ -133,12 +134,11 @@ Is Empty: 1
 Number of Probes to Search: 1
 C
 Number of Probes to Remove: 1
-Key Randomly Removed: DDD
-Key Randomly Removed: Hello!
+Key Randomly Removed: Goodbye!
 Hash Probes: Doubles and Ints
 [ 0 1.8 0.2 2 0.4 3.4 2.2 0.6 2.4 0.8 3.6 2.6 1 2.8 1.2 3.8 1.4 3 3.2 1.6 ]
 Number of Probes to Insert: 0
 Number of Probes to Search: 0
 25
-[ 3.4 - 0.2 3.6 - 3.8 - 0.6 - 0.8 - - 1 2.8 1.2 - 1.4 - - - ]
-((1,5), (2,1), (3,1))
+[ 3.4 - 0.2 3.6 - - 2.2 0.6 2.4 0.8 - 2.6 1 2.8 - - - - - - ]
+((1,1), (2,1), (3,1), (4,1))

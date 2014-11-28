@@ -6,58 +6,45 @@ int main()
     if (true)
     {
         std::cout << "RBST: Ints and Chars" << std::endl;
-        cop3530::RBST<int, char> h(20);
-        std::cout << "Capacity: " << h.capacity() << std::endl;
-        h.insert(10, 'A');
-        h.insert(10, 'B');
+        cop3530::RBST<int, char> r(10);
+        std::cout << "Capacity: " << r.capacity() << std::endl;
+        r.insert(10, 'A');
+        r.insert(3, 'B');
+        r.insert(12, 'C');
+        r.insert(15, 'D');
+        r.insert(17, 'E');
+        r.print(std::cout);
+        std::cout << std::endl;
+        std::cout << "Load: " << r.load() << std::endl;
+        std::cout << "Size: " << r.size() << std::endl;
         char x;
-        h.search(10, x);
-        std::cout << "Character at Key 10: " << x << std::endl;
-        for (unsigned int i=0; i < 20; ++i)
-        {
-            h.insert(i*10, 'A');
-        }
-        h.insert(20, 'C');
-        std::cout << "Attempting to Remove Key 30: " << h.remove(30, x) << std::endl;
-        std::cout << "Attempting to Remove Key 31: " << h.remove(31, x) << std::endl;
-        h.insert(23, 'D');
-        h.search(20, x);
-        std::cout << "Character at Key 20: " << x << std::endl;
-        h.print(std::cout);
+        std::cout << "Number of Probes to Find 3: " << r.search(3, x) << std::endl;
+        std::cout << "Character at 3: " << x << std::endl;
+        std::cout << "Number of Probes to Find 17: " << r.search(17, x) << std::endl;
+        std::cout << "Character at 17: " << x << std::endl;
+        r.clear();
+        r.print(std::cout);
         std::cout << std::endl;
-        std::cout << "Size: " << h.size() << std::endl;
-        std::cout << "Load: " << h.load() << std::endl;
-        std::cout << "Is Empty: " << h.is_empty() << std::endl;
-        h.clear();
-        h.print(std::cout);
+        std::cout << "Load: " << r.load() << std::endl;
+        std::cout << "Size: " << r.size() << std::endl;
+        std::cout << "Is Empty: " << r.is_empty() << std::endl;
+        r.insert(1, 'A');
+        r.insert(7, 'B');
+        r.insert(9, 'C');
+        r.insert(13, 'D');
+        r.insert(17, 'E');
+        r.insert(-5, 'F');
+        r.insert(-10, 'Z');
+        r.insert(-10, 'G');
+        std::cout << "Number of Probes to Find -10: " << r.search(-10, x) << std::endl;
+        std::cout << "Character at -10: " << x << std::endl;
+        std::cout << "Number of Probes to Remove 7: " << r.remove(7, x) << std::endl;
+        std::cout << "Character at 7: " << x << std::endl;
+        std::cout << "Number of Probes to Find 13: " << r.search(13, x) << std::endl;
+        r.print(std::cout);
         std::cout << std::endl;
-        std::cout << "Is Empty: " << h.is_empty() << std::endl;
-        for (int i=0; i<75; ++i)
-        {
-            h.insert(i, 'A');
-        }
-        std::cout << h.insert(15, 'D') << std::endl;
-        std::cout << h.search(15, x) << std::endl;
-        std::cout << h.search(61, x) << std::endl;
-        std::cout << x << std::endl;
-        h.print(std::cout);
-        std::cout << std::endl;
-        std::cout << std::endl;
-        for (unsigned int i=0; i<h.size(); ++i)
-        {
-            std::cout << "Key Randomly Removed: " << h.remove_random() << std::endl;
-        }
-        h.print(std::cout);
-        std::cout << std::endl;
-        std::cout << h.size() << std::endl;
-        h.remove(12, x);
-        h.remove(10, x);
-        h.remove(7, x);
-        h.insert(7, 'E');
-        h.search(7, x);
-        h.print(std::cout);
-        std::cout << std::endl;
-        std::cout << x << std::endl;
+        std::cout << "Load: " << r.load() << std::endl;
+        std::cout << "Size: " << r.size() << std::endl;
     }
     return 0;
 }

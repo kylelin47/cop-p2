@@ -104,6 +104,17 @@ namespace cop3530
                 delete this->table[i];
                 this->table[i] = NULL;
                 --this->count;
+                i += h;
+                while ( this->table[i] != NULL )
+                {
+                    K key = this->table[i]->getKey();
+                    V v = this->table[i]->getValue();
+                    delete this->table[i];
+                    this->deleted[i] = 1;
+                    this->table[i] = NULL;
+                    insert(key, v);
+                    i += h;
+                }
                 return probe_count;
             }
         }

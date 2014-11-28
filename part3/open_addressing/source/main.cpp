@@ -56,8 +56,8 @@ int main()
         h.remove(12, x);
         h.remove(10, x);
         h.remove(7, x);
-        h.insert(7, 'E');
-        h.search(7, x);
+        h.insert(-7, 'E');
+        h.search(-7, x);
         h.print(std::cout);
         std::cout << std::endl;
         std::cout << x << std::endl;
@@ -182,8 +182,8 @@ int main()
     }
     if (true)
     {
-        std::cout << "Hash Probes: Strings and Ints" << std::endl;
-        cop3530::hashProbe<std::string, int> h(4, 'q');
+        std::cout << "Hash Probes: Strings and Ints Double Hashing" << std::endl;
+        cop3530::doubleHashProbe<std::string, int> h(4);
         h.insert("Hello!", 1);
         h.print(std::cout);
         std::cout << std::endl;
@@ -211,7 +211,7 @@ int main()
     {
         std::cout << "Hash Probes: C-Strings and Chars" << std::endl;
         char str1[] = "Hello!";
-        cop3530::hashProbe<char*, char> h(4);
+        cop3530::hashProbe<char*, char> h(4, 'q');
         h.insert(str1, 'C');
         h.print(std::cout);
         std::cout << std::endl;
