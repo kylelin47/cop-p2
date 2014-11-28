@@ -19,17 +19,16 @@ std::size_t hash( std::string const& s ) {
 
 int main( int argc, char** argv ) {
     std::string line;
-    struct rusage usage;
-    struct timeval start, end;
-    getrusage(RUSAGE_SELF, &usage);
-    start = usage.ru_utime;
     while ( getline( std::cin, line ) )
     {
         hash(line);
     }
+    struct rusage usage;
+    struct timeval utime, stime;
     getrusage(RUSAGE_SELF, &usage);
-    end = usage.ru_utime;
-    printf("Started at: %ld.%lds\n", start.tv_sec, start.tv_usec);
-    printf("Ended at: %ld.%lds\n", end.tv_sec, end.tv_usec);
+    utime = usage.ru_utime;
+    stime = usage.ru_stime;
+    std::cout << "utime: " << utime.tv_sec << '.' << utime.tv_usec);
+    std::cout << "stime: " << stime.tv_sec << '.' << stime.tv_usec);
     return 0;
 }
