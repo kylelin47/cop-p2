@@ -28,7 +28,7 @@ int main( int argc, char** argv ) {
     getrusage(RUSAGE_SELF, &usage);
     utime = usage.ru_utime;
     stime = usage.ru_stime;
-    std::cout << "utime: " << utime.tv_sec << '.' << utime.tv_usec);
-    std::cout << "stime: " << stime.tv_sec << '.' << stime.tv_usec);
+    std::cout << "utime: " << utime.tv_sec << '.' << utime.tv_usec << std::endl;
+    std::cout << "stime: " << stime.tv_sec << '.' << stime.tv_usec << std::endl;
     return 0;
 }
