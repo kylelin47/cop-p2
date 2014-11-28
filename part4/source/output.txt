@@ -1,0 +1,79 @@
+RBST: Ints and Chars
+Capacity: 10
+[ 10 ]
+[ 3 12 10 ]
+[ 3 12 10 15 17 ]
+Load: 0.5
+Size: 5
+Number of Probes to Find 3: 0
+Character at 3: B
+Number of Probes to Find 17: 3
+Character at 17: E
+[ ]
+Load: 0
+Size: 0
+Is Empty: 1
+Number of Probes to Find -10: 0
+Character at -10: G
+Number of Probes to Remove 7: 4
+Character at 7: B
+Number of Probes to Find 13: 5
+[ -10 -5 1 9 17 13 ]
+Load: 0.6
+Size: 6
+Key Randomly Removed: -10
+Key Randomly Removed: 13
+Key Randomly Removed: -5
+Number of Probes to Find 13: -3
+[ 1 9 17 ]
+Load: 0.3
+Size: 3
+RBST: C-String and Ints
+Capacity: 4
+[ DDD Goodbye! Hello! HHH ]
+Number of Probes to Find Hello!: 2
+Int at Hello!: 16
+Key Randomly Removed: DDD
+Key Randomly Removed: Goodbye!
+[ HHH Hello! ]
+Load: 0.5
+Size: 2
+RBST: Strings and Strings
+Capacity: 4
+[ DDD Goodbye! Hello! HHH ]
+Number of Probes to Find Hello!: 2
+String at Hello!: Fifth
+Key Randomly Removed: DDD
+Key Randomly Removed: Goodbye!
+[ HHH Hello! ]
+Load: 0.5
+Size: 2
+RBST: Doubles and Doubles
+Capacity: 50
+[ 12.4 11.2 12.8 10.4 12 8.4 10.8 11.6 8 8.8 7.6 10 4.4 9.6 4 5.6 9.2 3.2 5.2 7.
+2 2.4 3.6 4.8 6 0.4 2.8 6.4 0 1.6 6.8 1.2 2 0.8 ]
+Number of Probes to Find 1.6: 11
+Double at 1.6: 1.6
+Key Randomly Removed: 4.8
+Key Randomly Removed: 6.8
+Key Randomly Removed: 11.6
+Key Randomly Removed: 8
+Key Randomly Removed: 10.8
+Key Randomly Removed: 9.2
+Key Randomly Removed: 5.2
+Key Randomly Removed: 2.4
+Key Randomly Removed: 3.6
+Key Randomly Removed: 0
+Key Randomly Removed: 8.4
+Key Randomly Removed: 7.2
+Key Randomly Removed: 3.2
+Key Randomly Removed: 5.6
+Key Randomly Removed: 8.8
+Key Randomly Removed: 10
+Key Randomly Removed: 10.4
+Key Randomly Removed: 0.4
+Key Randomly Removed: 2
+Key Randomly Removed: 6
+[ 12.4 11.2 12.8 9.6 12 7.6 4.4 4 6.4 2.8 0.8 1.6 1.2 ]
+Load: 0.26
+Size: 13

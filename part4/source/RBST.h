@@ -109,22 +109,15 @@ namespace cop3530
         }
         void clear()
         {
-            if ( root != NULL )
+            for(unsigned int i=0; i < capacity() - 1; ++i)
             {
-                std::queue<Node*> q;
-                q.push(root);
-                while ( !q.empty() )
-                {
-                    Node* n = q.front();
-                    q.pop();
-                    if (n->left != NULL) q.push(n->left);
-                    if (n->right != NULL) q.push(n->right);
-                    n->left = free;
-                    n->right = NULL;
-                    free = n;
-                }
+                node_table[i]->right = NULL;
+                node_table[i]->left = node_table[i+1];
             }
+            node_table[capacity()-1]->left = NULL;
+            node_table[capacity()-1]->right = NULL;
             root = NULL;
+            free = node_table[0];
             count = 0;
         }
         bool is_empty()
@@ -308,7 +301,6 @@ namespace cop3530
                 h->data = x;
                 return;
             }
-            //srand(time(NULL));
             if (rand() < RAND_MAX/(h->subtree_size+1))
             {
                 insertT(h, x, nodes_visited);
