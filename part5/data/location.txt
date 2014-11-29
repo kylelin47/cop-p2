@@ -16155,9 +16155,9 @@ La_Bagatelle
 Ibegwa_Aka
 Koinya
 Bele
-Mallanwala
-Fatehgarh_Panjtur
-Bilga
+Zamboanga
+Kisante
+San_Remigio
 Dawan
 Palikir
 Eagles_Rust
@@ -38927,10 +38927,9 @@ Huntsville
 Livingston
 Grand_Ridge
 Sneads
-
-6937588
-Mazarambroz
-7157
+Chattahoochee
+Meet_Ghamr
+El_Ebrahemia
 Khanna
 Caborca
 Esqueda
@@ -62440,8 +62439,8 @@ Rantoul
 Albany
 Quincy
 Delaware
-479900792
-Karabulak
+Centerburg
+South_Park_Township
 Elim
 Lorain
 Claysburg
@@ -87521,7 +87520,6 @@ Guzargues
 Saturargues
 Gallargues-le-Montueux
 Beauvoisin
-Assay
 Paradou
 Maussane-les-Alpilles
 Charleval
@@ -111969,7 +111967,7 @@ Dammartin-les-Templiers
 Saint-Juan
 Passavant
 Vaudrivillers
-
+Ouvans
 Surmont
 La_Grange
 Vauclusotte
@@ -137024,7 +137022,7 @@ Nechanice
 Velyki_Mosty
 Kalynivka
 Kozyn
-rudyanka
+Prudyanka
 Lumby
 Minnedosa
 Havre-Saint-Pierre

@@ -19,13 +19,13 @@ int main( int argc, char** argv ) {
         sline << line;
         std::string token;
         int i = 0;
-        while ( getline(sline, token, ' ') )
+        while ( getline(sline, token, ':') )
         {
-            if (i == 0) uid << token << '\n';
-            else if (i == 1) location << token << '\n';
-            else if (i == 2) country << token << '\n';
-            else if (i == 3) population << token << '\n';
-            else if (i == 4) coords << token << '\n';
+            if (i == 0) uid << token << std::endl;
+            else if (i == 1) location << token << std::endl;
+            else if (i == 2) country << token << std::endl;
+            else if (i == 3) population << token << std::endl;
+            else if (i == 4) coords << token << std::endl;
             ++i;
         }
         sline.clear();

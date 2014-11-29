@@ -10,7 +10,7 @@ std::size_t hash( std::string k )
     const char* v = k.c_str();
     int h = 0, a = 127;
     for (; *v != 0; v++)
-        h = (a*h + *v) % capacity();
+        h = (a*h + *v);
     return h;
 }
 int main( int argc, char** argv ) {
