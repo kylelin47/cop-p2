@@ -99,6 +99,7 @@ int main( int argc, char** argv ) {
     int* collisions2 = new int[capacity]();
     int* collisions3 = new int[capacity]();
     int* collisions4 = new int[capacity]();
+    int num_lines = 0;
     while ( getline( std::cin, line ) )
     {
         std::size_t index = hash(line) % capacity;
@@ -109,9 +110,11 @@ int main( int argc, char** argv ) {
         ++collisions3[index3];
         std::size_t index4 = hash4(line) % capacity;
         ++collisions4[index4];
+        ++num_lines;
     }
     std::cout << capacity << std::endl;
     std::cout << "Super Fast Hash" << std::endl;
+    int counted = 0;
     for ( int i=1; i < capacity; ++i )
     {
         int count = 0;
@@ -120,8 +123,12 @@ int main( int argc, char** argv ) {
             if (collisions[j] == i) ++count;
         }
         if (count > 0) std::cout << i << ' ' << count << std::endl;
+        counted += count * i;
+        if (counted == num_lines) break;
     }
+    delete[] collisions;
     std::cout << "Book Hash" << std::endl;
+    counted = 0;
     for ( int i=1; i < capacity; ++i )
     {
         int count = 0;
@@ -130,7 +137,11 @@ int main( int argc, char** argv ) {
             if (collisions2[j] == i) ++count;
         }
         if (count > 0) std::cout << i << ' ' << count << std::endl;
+        counted += count * i;
+        if (counted == num_lines) break;
     }
+    delete[] collisions2;
+    counted = 0;
     std::cout << "Cat Hash" << std::endl;
     for ( int i=1; i < capacity; ++i )
     {
@@ -140,7 +151,11 @@ int main( int argc, char** argv ) {
             if (collisions3[j] == i) ++count;
         }
         if (count > 0) std::cout << i << ' ' << count << std::endl;
+        counted += count * i;
+        if (counted == num_lines) break;
     }
+    delete[] collisions3;
+    counted = 0;
     std::cout << "My Hash" << std::endl;
     for ( int i=1; i < capacity; ++i )
     {
@@ -150,6 +165,9 @@ int main( int argc, char** argv ) {
             if (collisions4[j] == i) ++count;
         }
         if (count > 0) std::cout << i << ' ' << count << std::endl;
+        counted += count * i;
+        if (counted == num_lines) break;
     }
+    delete[] collisions4;
     return 0;
 }
