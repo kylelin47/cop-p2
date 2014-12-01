@@ -1,0 +1,44 @@
+//Lexeme Count: http://www.cise.ufl.edu/~dts/cop3530/proj2/part5-data.html
+Localities
+159237  22748   6923    //X, X/7, X/23
+159287  22751   6947    //Higher prime https://www.easycalculation.com/prime-number.php
+262144  32768   8192    //Higher power of 2 http://www.vaughns-1-pagers.com/computer/powers-of-2.htm
+262147  32771   8191    //Prime nearest power of 2 https://www.easycalculation.com/prime-number.php
+196613  24593   6151    //Prime in middle of powers of 2 http://planetmath.org/goodhashtableprimes
+
+Aeneid
+16628   2375    723
+16631   2377    727
+32768   4096    1024
+32771   4099    1021
+24593   3079    769
+
+Confucian Analects
+3118    445     135
+3119    449     137
+4096    512     256
+4099    509     257
+3079    389     193
+
+The Divine Comedy
+12667   1809    550
+12671   1811    557
+16384   2048    1024
+16381   2053    1021
+12289   1543    769
+
+The Origin of Species
+8899    1271    387
+8923    1277    389
+16384   2048    512
+16381   2053    509
+12289   1543    389
+
+War and Peace
+17545   2506    763
+17551   2521    769
+32768   4096    1024
+32771   4099    1021
+24593   3079    769
+
+3119 for ALL

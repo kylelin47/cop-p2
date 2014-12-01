@@ -1,0 +1,4 @@
+g++ collision.cpp -o collision.out
+./collision.out table_capacity < keys_file.txt >> output_file.txt
+
+plot for [COL=2:5] '3119.txt' using COL:xticlabels(1) title columnheader

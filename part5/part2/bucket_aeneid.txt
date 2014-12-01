@@ -1,0 +1,213 @@
+Capacity: 6000
+Size: 1
+Items in Trial: 63791
+Items in Unique: 16628
+Insert Probe Count Distribution
+0 193
+1 2
+Success Search Probe Count Distribution
+Failure Search Probe Count Distribution
+Capacity: 6000
+Size: 1
+Items in Trial: 63791
+Items in Unique: 16628
+Insert Probe Count Distribution
+0 424
+1 6
+Success Search Probe Count Distribution
+Failure Search Probe Count Distribution
+Capacity: 6000
+Size: 1
+Items in Trial: 63791
+Items in Unique: 16628
+Insert Probe Count Distribution
+0 677
+1 19
+Success Search Probe Count Distribution
+Failure Search Probe Count Distribution
+Capacity: 6000
+Size: 1
+Items in Trial: 63791
+Items in Unique: 16628
+Insert Probe Count Distribution
+0 969
+1 38
+2 1
+Success Search Probe Count Distribution
+Failure Search Probe Count Distribution
+Capacity: 6000
+Size: 1
+Items in Trial: 63791
+Items in Unique: 16628
+Insert Probe Count Distribution
+0 1262
+1 60
+2 2
+Success Search Probe Count Distribution
+Failure Search Probe Count Distribution
+Capacity: 6000
+Size: 1
+Items in Trial: 63791
+Items in Unique: 16628
+Insert Probe Count Distribution
+0 1586
+1 94
+2 7
+Success Search Probe Count Distribution
+Failure Search Probe Count Distribution
+Capacity: 6000
+Size: 1
+Items in Trial: 63791
+Items in Unique: 16628
+Insert Probe Count Distribution
+0 1892
+1 138
+2 11
+3 2
+Success Search Probe Count Distribution
+Failure Search Probe Count Distribution
+Capacity: 6000
+Size: 1
+Items in Trial: 63791
+Items in Unique: 16628
+Insert Probe Count Distribution
+0 2219
+1 201
+2 18
+3 2
+Success Search Probe Count Distribution
+Failure Search Probe Count Distribution
+Capacity: 6000
+Size: 1
+Items in Trial: 63791
+Items in Unique: 16628
+Insert Probe Count Distribution
+0 2559
+1 258
+2 25
+3 3
+Success Search Probe Count Distribution
+Failure Search Probe Count Distribution
+Capacity: 6000
+Size: 1
+Items in Trial: 63791
+Items in Unique: 16628
+Insert Probe Count Distribution
+0 2943
+1 335
+2 36
+3 3
+Success Search Probe Count Distribution
+Failure Search Probe Count Distribution
+Capacity: 6000
+Size: 1
+Items in Trial: 63791
+Items in Unique: 16628
+Insert Probe Count Distribution
+0 3382
+1 432
+2 50
+3 4
+Success Search Probe Count Distribution
+Failure Search Probe Count Distribution
+Capacity: 6000
+Size: 1
+Items in Trial: 63791
+Items in Unique: 16628
+Insert Probe Count Distribution
+0 3829
+1 527
+2 70
+3 6
+Success Search Probe Count Distribution
+Failure Search Probe Count Distribution
+Capacity: 6000
+Size: 2
+Items in Trial: 63791
+Items in Unique: 16628
+Insert Probe Count Distribution
+0 4309
+1 655
+2 92
+3 7
+Success Search Probe Count Distribution
+0 1
+Failure Search Probe Count Distribution
+Capacity: 6000
+Size: 1
+Items in Trial: 63791
+Items in Unique: 16628
+Insert Probe Count Distribution
+0 4807
+1 786
+2 123
+3 15
+Success Search Probe Count Distribution
+Failure Search Probe Count Distribution
+Capacity: 6000
+Size: 1
+Items in Trial: 63791
+Items in Unique: 16628
+Insert Probe Count Distribution
+0 5347
+1 937
+2 161
+3 22
+4 2
+Success Search Probe Count Distribution
+Failure Search Probe Count Distribution
+Capacity: 6000
+Size: 1
+Items in Trial: 63791
+Items in Unique: 16628
+Insert Probe Count Distribution
+0 5986
+1 1127
+2 193
+3 33
+4 2
+Success Search Probe Count Distribution
+Failure Search Probe Count Distribution
+Capacity: 6000
+Size: 2
+Items in Trial: 63791
+Items in Unique: 16628
+Insert Probe Count Distribution
+0 6562
+1 1317
+2 243
+3 43
+4 4
+5 1
+Success Search Probe Count Distribution
+0 1
+Failure Search Probe Count Distribution
+Capacity: 6000
+Size: 1
+Items in Trial: 63791
+Items in Unique: 16628
+Insert Probe Count Distribution
+0 7287
+1 1534
+2 301
+3 54
+4 8
+5 1
+6 1
+Success Search Probe Count Distribution
+Failure Search Probe Count Distribution
+Capacity: 6000
+Size: 1
+Items in Trial: 63791
+Items in Unique: 16628
+Insert Probe Count Distribution
+0 8041
+1 1793
+2 393
+3 69
+4 10
+5 1
+6 1
+7 1
+Success Search Probe Count Distribution
+Failure Search Probe Count Distribution
